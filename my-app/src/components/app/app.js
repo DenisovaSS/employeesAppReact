@@ -12,6 +12,7 @@ function App() {
     { name: 'Alex Maloy', salary: 1300, increase: true, id: 2 },
     { name: 'Marina Martun', salary: 2500, increase: false, id: 3 },
   ];
+
   return (
     <div className="app">
       <AppInfo />
