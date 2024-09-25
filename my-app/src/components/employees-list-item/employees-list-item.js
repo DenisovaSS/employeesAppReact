@@ -1,15 +1,7 @@
 import './employees-list-item.css';
 
 const EmployeesListItem = (props) => {
-  const {
-    name,
-    salary,
-    onDelete,
-    onToggleIncrease,
-    onToggleRise,
-    increase,
-    like,
-  } = props;
+  const { name, salary, onDelete, onToggleProp, increase, like } = props;
   let classNamesIncrease = increase ? ' increase' : '';
   let classNamesLike = like ? ' like' : '';
   return (
@@ -20,7 +12,11 @@ const EmployeesListItem = (props) => {
         classNamesLike
       }
     >
-      <span className="list-group-item-label" onClick={onToggleRise}>
+      <span
+        className="list-group-item-label"
+        onClick={onToggleProp}
+        data-toggle="like"
+      >
         {name}
       </span>
       <input
@@ -32,7 +28,8 @@ const EmployeesListItem = (props) => {
         <button
           type="button"
           className="btn-cookie btn-sm "
-          onClick={onToggleIncrease}
+          onClick={onToggleProp}
+          data-toggle="increase"
         >
           <i className="fas fa-cookie"></i>
         </button>
